@@ -1,0 +1,872 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+
+   /* THEME COLORS */
+
+:root {
+    --canvas: #F4F8FA;
+    --teal: #0F9D94;
+    --blue: #3268A8;
+    --ink: #102A43;
+    --muted: #627D98;
+    --line: #D9E2EC;
+}
+
+
+   /* GLOBAL STREAMLIT STYLING */
+
+#MainMenu,
+footer,
+[data-testid="stHeader"],
+[data-testid="stDecoration"] {
+    display: none !important;
+}
+
+.stApp {
+    background: var(--canvas);
+    color: var(--ink);
+}
+
+html,
+body,
+[data-testid="stAppViewContainer"] {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.block-container {
+    max-width: 810px !important;
+    padding: 24px 24px 30px !important;
+}
+
+
+   /* TOP NAVIGATION / BRAND */
+
+.app-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 35px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.brand-symbol {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    background: #15514F;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 27px;
+    line-height: 1;
+}
+
+.brand-name {
+    font-family: Manrope, sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.brand-name span {
+    color: var(--teal);
+}
+
+.brand-kicker {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.15px;
+    color: #7A96A3;
+    margin-top: 3px;
+}
+
+.place {
+    border: 1px solid #D9ECE8;
+    background: #E7F3F1;
+    color: #27665F;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 10px 14px;
+    border-radius: 99px;
+}
+
+.place-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #13A58C;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+
+   /* MAIN HEADING */
+
+.intro {
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.25px;
+    color: #138C84;
+    font-weight: 800;
+}
+
+.eyebrow span {
+    display: inline-block;
+    background: #18B59D;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.intro h1 {
+    font-family: Manrope, sans-serif;
+    font-size: clamp(36px, 5.4vw, 52px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -2.4px;
+    max-width: 610px;
+    margin: 13px 0 !important;
+    color: var(--ink);
+}
+
+.intro h1 em {
+    font-style: normal;
+    color: var(--teal);
+}
+
+.intro p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 620px;
+    margin: 0;
+}
+
+/* WEATHER OUTLOOK CARD */ 
+
+.outlook {
+    background: linear-gradient(
+        120deg,
+        #DDF4F1 0%,
+        #E7F0FA 100%
+    );
+    border: 1px solid #D2E7E7;
+    border-radius: 24px;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 1fr 142px;
+    gap: 14px 18px;
+    margin-bottom: 22px;
+    position: relative;
+    overflow: hidden;
+}
+
+.outlook::before {
+    content: "";
+    position: absolute;
+    width: 225px;
+    height: 225px;
+    border: 1px solid #FFFFFF75;
+    border-radius: 50%;
+    right: -70px;
+    top: -94px;
+}
+
+.outlook-pill {
+    display: inline-block;
+    background: #FFFFFFBF;
+    border-radius: 100px;
+    color: #377B78;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 8px 12px;
+    letter-spacing: .55px;
+}
+
+.outlook h2 {
+    font: 800 26px Manrope, sans-serif;
+    letter-spacing: -.9px;
+    color: #164A52;
+    margin: 16px 0 7px;
+}
+
+.outlook h2 span {
+    color: var(--teal);
+}
+
+.outlook p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #557787;
+    margin: 0;
+    max-width: 390px;
+}
+
+   /* CSS WEATHER ILLUSTRATION */
+
+
+.weather-art {
+    width: 130px;
+    height: 124px;
+    position: relative;
+    justify-self: end;
+    background: #FFFFFFA8;
+    border: 1px solid #FFFFFFDC;
+    border-radius: 23px;
+    box-shadow: 0 12px 25px #6696A219;
+}
+
+.sun {
+    position: absolute;
+    width: 57px;
+    height: 57px;
+    top: 17px;
+    right: 25px;
+    border-radius: 50%;
+    background: linear-gradient(
+        140deg,
+        #FFEAA6,
+        #FFBC48
+    );
+    box-shadow: 0 0 0 10px #FFE7A65A;
+}
+
+.cloud {
+    position: absolute;
+    border-radius: 55px;
+    background: linear-gradient(
+        160deg,
+        #FFFFFF,
+        #D7E7F1
+    );
+    filter: drop-shadow(0 9px 7px #5F91A52B);
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.cloud-front {
+    height: 35px;
+    width: 90px;
+    bottom: 24px;
+    left: 19px;
+}
+
+.cloud-front::before {
+    height: 51px;
+    width: 51px;
+    left: 15px;
+    bottom: 7px;
+}
+
+.cloud-front::after {
+    height: 39px;
+    width: 39px;
+    right: 7px;
+    bottom: 4px;
+}
+
+.cloud-back {
+    width: 62px;
+    height: 29px;
+    bottom: 27px;
+    right: 8px;
+    opacity: .75;
+}
+
+.art-spark {
+    position: absolute;
+    color: #EAB55A;
+    font-size: 17px;
+}
+
+.art-spark.a {
+    top: 15px;
+    left: 14px;
+}
+
+.art-spark.b {
+    top: 20px;
+    right: 8px;
+}
+
+   /* THREE INFO CARDS */
+
+.mini-cards {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.mini-card {
+    background: #FFFFFFC9;
+    border: 1px solid #FFFFFFA6;
+    border-radius: 14px;
+    min-height: 79px;
+    padding: 12px 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.mini-icon {
+    font-size: 17px;
+    color: #0B8D85;
+    line-height: 1.1;
+    margin-bottom: 3px;
+}
+
+.mini-card strong {
+    font-size: 12px;
+    color: #285A60;
+}
+
+.mini-card small {
+    font-size: 10px;
+    color: #81969E;
+}
+
+   /* WEATHER FORM HEADING */
+
+.section-lead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0 0 12px;
+}
+
+.section-lead h3 {
+    font: 800 21px Manrope, sans-serif;
+    color: #163A4A;
+    letter-spacing: -.5px;
+    margin: 0 0 5px;
+}
+
+.section-lead p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+}
+
+.section-mark {
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    background: #E4F4F1;
+    border-radius: 12px;
+    color: #0E938A;
+    font-size: 21px;
+}
+
+   /* STREAMLIT FORM */
+
+[data-testid="stForm"] {
+    background: #FFFFFF !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 21px !important;
+    padding: 20px !important;
+    box-shadow: 0 12px 35px #112C4310;
+}
+
+[data-testid="stForm"] label p {
+    font-size: 12.5px !important;
+    color: #415F72 !important;
+    font-weight: 700 !important;
+}
+
+[data-testid="stForm"] [data-baseweb="input"],
+[data-testid="stForm"] [data-baseweb="select"] > div {
+    background: #F9FCFD !important;
+    border: 1px solid #D9E2EC !important;
+    border-radius: 12px !important;
+    min-height: 45px !important;
+}
+
+[data-testid="stForm"] input {
+    background: transparent !important;
+    color: #102A43 !important;
+}
+
+[data-testid="stForm"] [data-baseweb="input"]:focus-within,
+[data-testid="stForm"] [data-baseweb="select"] > div:focus-within {
+    border-color: #0F9D94 !important;
+    box-shadow: 0 0 0 2px #0F9D9422 !important;
+}
+
+   /* FORECAST BUTTON */
+
+[data-testid="stFormSubmitButton"] button {
+    min-height: 49px !important;
+    border: none !important;
+    border-radius: 12px !important;
+
+    background: linear-gradient(
+        105deg,
+        #0F9D94,
+        #147D92
+    ) !important;
+
+    color: white !important;
+    font-weight: 800 !important;
+    font-size: 14px !important;
+
+    box-shadow: 0 8px 17px #0F9D942F;
+    transition: transform .2s, box-shadow .2s;
+}
+
+[data-testid="stFormSubmitButton"] button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 20px #0F9D943B !important;
+}
+
+
+   /* FORECAST RESULT */
+
+.result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-top: 18px;
+    border-radius: 20px;
+    padding: 22px;
+    border: 1px solid #CCEAE4;
+
+    background: linear-gradient(
+        110deg,
+        #EAF8F4,
+        #F8FCFE
+    );
+}
+
+.result.light {
+    background: linear-gradient(
+        110deg,
+        #F0F8FF,
+        #F8FCFF
+    );
+    border-color: #CBDFF1;
+}
+
+.result.heavy {
+    background: linear-gradient(
+        110deg,
+        #FFF5EC,
+        #FFFAF5
+    );
+    border-color: #F3DDC8;
+}
+
+.result-kicker {
+    color: #148B83;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.result h3 {
+    color: #163A4A;
+    font: 800 21px Manrope, sans-serif;
+    margin: 8px 0 6px;
+}
+
+.result p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.result-right {
+    text-align: right;
+    min-width: 142px;
+}
+
+.result-symbol {
+    font-size: 22px;
+    color: #0F9D94;
+}
+
+.result-number {
+    font: 800 34px Manrope, sans-serif;
+    color: #102A43;
+    white-space: nowrap;
+}
+
+.result-number small {
+    font-size: 15px;
+}
+
+.result-caption {
+    color: #627D98;
+    font-size: 11px;
+}
+
+
+   /* FOOTER */
+
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    color: #8B9FAE;
+    font-size: 10px;
+    letter-spacing: .3px;
+    margin-top: 20px;
+}
+
+
+   /* MOBILE RESPONSIVENESS */
+
+@media (max-width: 640px) {
+    .block-container {
+        padding: 18px 14px 26px !important;
+    }
+
+    .app-top {
+        margin-bottom: 27px;
+    }
+
+    .place {
+        font-size: 10px;
+        padding: 8px;
+    }
+
+    .intro h1 {
+        font-size: 35px;
+        letter-spacing: -1.7px;
+    }
+
+    .intro p {
+        font-size: 13px;
+    }
+
+    .outlook {
+        padding: 16px;
+        grid-template-columns: 1fr 95px;
+        gap: 12px;
+    }
+
+    .outlook h2 {
+        font-size: 21px;
+    }
+
+    .weather-art {
+        transform: scale(.74);
+        transform-origin: top right;
+        margin-bottom: -26px;
+    }
+
+    .mini-cards {
+        gap: 6px;
+    }
+
+    .mini-card {
+        padding: 10px 8px;
+        min-height: 72px;
+    }
+
+    .mini-card strong {
+        font-size: 10px;
+    }
+
+    .mini-card small {
+        font-size: 9px;
+    }
+
+    [data-testid="stForm"] {
+        padding: 13px !important;
+    }
+
+    .result {
+        padding: 16px;
+        gap: 8px;
+    }
+
+    .result-number {
+        font-size: 27px;
+    }
+
+    .result-right {
+        min-width: 105px;
+    }
+}
+
+
+
+
+/* ==========================================
+   FINAL UI REFINEMENTS
+   CHANGI ATMOSPHERE
+========================================== */
+
+/* 1. IMPROVED PAGE SPACING */
+
+.block-container {
+    padding-top: 20px !important;
+    padding-bottom: 24px !important;
+}
+
+.app-top {
+    margin-bottom: 25px;
+}
+
+.intro {
+    margin-bottom: 22px;
+}
+
+.intro h1 {
+    margin: 10px 0 !important;
+}
+
+.intro p {
+    line-height: 1.6;
+}
+
+.outlook {
+    margin-bottom: 18px;
+    padding: 22px;
+}
+
+.section-lead {
+    margin-bottom: 10px;
+}
+
+
+/* 2. REFINED WEATHER FORM */
+
+[data-testid="stForm"] {
+    padding: 18px 20px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 8px 28px rgba(16, 42, 67, 0.045);
+}
+
+[data-testid="stForm"] label p {
+    font-size: 12.5px !important;
+    font-weight: 700 !important;
+    color: #38546B !important;
+}
+
+
+/* 3. CLEANER NUMBER INPUT CONTROLS */
+
+[data-testid="stForm"] [data-baseweb="input"] {
+    background: #FFFFFF !important;
+    border: 1px solid #D9E2EC !important;
+    border-radius: 12px !important;
+    min-height: 45px !important;
+    overflow: hidden;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+[data-testid="stForm"] [data-baseweb="input"] input {
+    background: #FFFFFF !important;
+    color: #102A43 !important;
+    font-size: 14px !important;
+}
+
+[data-testid="stForm"] [data-baseweb="input"] button {
+    background: #F4F8FA !important;
+    color: #45647C !important;
+    border-color: #E8EEF3 !important;
+}
+
+[data-testid="stForm"] [data-baseweb="input"] button:hover {
+    background: #E7F5F3 !important;
+    color: #0F9D94 !important;
+}
+
+[data-testid="stForm"] [data-baseweb="input"]:focus-within {
+    border-color: #0F9D94 !important;
+    box-shadow: 0 0 0 3px rgba(15, 157, 148, 0.10) !important;
+}
+
+
+/* 4. IMPROVED MONTH SELECTOR */
+
+[data-testid="stForm"] [data-baseweb="select"] > div {
+    background: #FFFFFF !important;
+    border: 1px solid #D9E2EC !important;
+    border-radius: 12px !important;
+    min-height: 45px !important;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+[data-testid="stForm"] [data-baseweb="select"] > div:focus-within {
+    border-color: #0F9D94 !important;
+    box-shadow: 0 0 0 3px rgba(15, 157, 148, 0.10) !important;
+}
+
+
+/* 5. POLISHED PREDICTION BUTTON */
+
+[data-testid="stFormSubmitButton"] button {
+    min-height: 50px !important;
+    border-radius: 12px !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+
+    background: linear-gradient(
+        105deg,
+        #0F9D94 0%,
+        #147D92 100%
+    ) !important;
+
+    box-shadow: 0 6px 16px rgba(15, 157, 148, 0.17) !important;
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease !important;
+}
+
+[data-testid="stFormSubmitButton"] button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 9px 20px rgba(15, 157, 148, 0.24) !important;
+}
+
+[data-testid="stFormSubmitButton"] button:active {
+    transform: translateY(0);
+}
+
+
+/* 6. MORE REFINED FORECAST RESULT */
+
+.result {
+    margin-top: 15px;
+    border-radius: 20px;
+    padding: 22px 24px;
+    gap: 20px;
+    box-shadow: 0 7px 22px rgba(16, 42, 67, 0.035);
+}
+
+.result-kicker {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.1px;
+}
+
+.result h3 {
+    font-size: 22px;
+    letter-spacing: -0.5px;
+    margin: 8px 0 6px;
+}
+
+.result p {
+    font-size: 12.5px;
+    line-height: 1.6;
+}
+
+.result-number {
+    font-size: 38px;
+    line-height: 1.2;
+    letter-spacing: -1.1px;
+}
+
+.result-number small {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.result-caption {
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.result-symbol {
+    font-size: 24px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+
+/* 7. SUBTLE FOOTER REFINEMENT */
+
+.site-footer {
+    margin-top: 17px;
+    padding-top: 3px;
+    font-size: 10px;
+}
+
+
+/* 8. RESPONSIVE IMPROVEMENTS */
+
+@media (max-width: 640px) {
+
+    .block-container {
+        padding: 16px 14px 22px !important;
+    }
+
+    .app-top {
+        margin-bottom: 23px;
+    }
+
+    .intro {
+        margin-bottom: 18px;
+    }
+
+    .intro h1 {
+        font-size: 35px;
+        line-height: 1.16;
+    }
+
+    .outlook {
+        padding: 16px;
+        margin-bottom: 17px;
+    }
+
+    [data-testid="stForm"] {
+        padding: 14px !important;
+    }
+
+    .result {
+        padding: 17px;
+        gap: 10px;
+    }
+
+    .result h3 {
+        font-size: 19px;
+    }
+
+    .result-number {
+        font-size: 29px;
+    }
+
+    .result-right {
+        min-width: 105px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-testid="stFormSubmitButton"] button {
+        transition: none !important;
+    }
+
+    [data-testid="stFormSubmitButton"] button:hover {
+        transform: none;
+    }
+}
